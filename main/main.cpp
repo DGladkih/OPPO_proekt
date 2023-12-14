@@ -1,5 +1,4 @@
-﻿//Первая практическая работа
-#include <iostream>
+﻿#include <iostream>
 #include <sstream>
 #include <vector>
 #include <string>
@@ -22,28 +21,43 @@ public:
     }
 };
 
+std::string getProductName() {
+    std::string name;
+    std::cout << "Введите Название товара: ";
+    std::getline(std::cin, name);
+    return name;
+}
+
+int getProductQuantity() {
+    std::string input;
+    std::cout << "Введите количество товара: ";
+    std::getline(std::cin, input);
+    return std::stoi(input);
+}
+
+std::string getProductDate() {
+    std::string date;
+    std::cout << "Введите дату (напримерf, 2023.12.31): ";
+    std::getline(std::cin, date);
+    return date;
+}
+
+void printProductInfo(const Product& product) {
+    product.displayInfo();
+}
+
 int main() {
     std::locale::global(std::locale(""));
 
     std::cout << "Введите информацию о товаре (в формате: Дата Название Количество):" << std::endl;
 
-    std::string input;
-    std::cout << "Введите Название товара: ";
-    std::getline(std::cin, input);
-    std::string name = input;
-
-    std::cout << "Введите количество товара: ";
-    std::getline(std::cin, input);
-    int quantity = std::stoi(input);
-
-    std::cout << "Введите дату (например, 2023.12.31): ";
-    std::getline(std::cin, input);
-    std::string date = input;
+    std::string name = getProductName();
+    int quantity = getProductQuantity();
+    std::string date = getProductDate();
 
     Product product(date, name, quantity);
 
-    product.displayInfo();
+    printProductInfo(product);
 
     return 0;
-
 }
