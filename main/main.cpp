@@ -1,4 +1,9 @@
-﻿#include <iostream>
+﻿#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#define DBG_NEW new( _NORMAL_BLOCK , __FILE__ , __LINE__)
+#define new DBG_NEW
+
+#include <iostream>
 #include <sstream>
 #include <vector>
 #include <string>
@@ -118,6 +123,9 @@ void printProductInfo(const Product& product) {
 int main() {
     std::locale::global(std::locale(""));
 
+    // Включаем отслеживание утечек памяти
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
     try {
         // Запрос информации о продукте у пользователя
         std::cout << "Введите информацию о товаре (в формате: Дата Название Количество):" << std::endl;
@@ -136,6 +144,9 @@ int main() {
         std::cerr << "Ошибка: " << e.what() << std::endl;
         return 1;
     }
+
+    // Проверка утечек памяти при завершении программы
+    _CrtDumpMemoryLeaks();
 
     return 0;
 }
