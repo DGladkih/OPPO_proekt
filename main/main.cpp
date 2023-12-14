@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿//Первая практическая работа
+#include <iostream>
 #include <sstream>
 #include <vector>
 #include <string>
@@ -44,4 +45,5 @@ int main() {
     product.displayInfo();
 
     return 0;
+
 }
