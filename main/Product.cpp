@@ -1,17 +1,17 @@
-// Класс для представления информации о продукте
+// ГЉГ«Г Г±Г± Г¤Г«Гї ГЇГ°ГҐГ¤Г±ГІГ ГўГ«ГҐГ­ГЁГї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г® ГЇГ°Г®Г¤ГіГЄГІГҐ
 #include "Product.h"
 #include <iostream>
-// Конструктор класса Product, устанавливающий данные о продукте
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ«Г Г±Г±Г  Product, ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГѕГ№ГЁГ© Г¤Г Г­Г­Г»ГҐ Г® ГЇГ°Г®Г¤ГіГЄГІГҐ
 Product::Product(const std::string& date, const std::string& name, int quantity)
     : date(date), name(name), quantity(quantity) {}
-// Вывод информации о продукте
+// Г‚Г»ГўГ®Г¤ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г® ГЇГ°Г®Г¤ГіГЄГІГҐ
 void Product::displayInfo() const {
-    // ... (оставить реализацию метода displayInfo как в оригинале)
-    std::cout << "Дата: " << date << std::endl;
-    std::cout << "Название: " << name << std::endl;
-    std::cout << "Количество: " << quantity << std::endl;
+
+    std::cout << "Г„Г ГІГ : " << date << std::endl;
+    std::cout << "ГЌГ Г§ГўГ Г­ГЁГҐ: " << name << std::endl;
+    std::cout << "ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ®: " << quantity << std::endl;
 }
-// Функция для вывода информации о продукте
+// Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГўГ»ГўГ®Г¤Г  ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г® ГЇГ°Г®Г¤ГіГЄГІГҐ
 void printProductInfo(const Product& product) {
     product.displayInfo();
 }
