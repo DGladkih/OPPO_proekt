@@ -1,39 +1,39 @@
 //ProductInfoHandler.cpp
 #include "ProductInfoHandler.h"
 #include <iostream>
-#include "DateValidator.h" // Подключаем для использования DateValidator
+#include "DateValidator.h" // ГЏГ®Г¤ГЄГ«ГѕГ·Г ГҐГ¬ Г¤Г«Гї ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГї DateValidator
 
 std::string ProductInfoHandler::getProductName() {
     std::string name;
-    std::cout << "Введите Название товара: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЌГ Г§ГўГ Г­ГЁГҐ ГІГ®ГўГ Г°Г : ";
     std::getline(std::cin, name);
     return name;
 }
 
-// Получение количества товара от пользователя
+// ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  ГІГ®ГўГ Г°Г  Г®ГІ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
 int ProductInfoHandler::getProductQuantity() {
     std::string input;
-    std::cout << "Введите количество товара: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®ГўГ Г°Г : ";
     std::getline(std::cin, input);
     try {
         int quantity = std::stoi(input);
         if (quantity < 0) {
-            throw std::invalid_argument("Отрицательное количество товара");
+            throw std::invalid_argument("ГЋГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®ГўГ Г°Г ");
         }
         return quantity;
     }
     catch (const std::invalid_argument& e) {
-        throw std::invalid_argument("Некорректное количество товара");
+        throw std::invalid_argument("ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®ГўГ Г°Г ");
     }
 }
 
-// Получение даты товара от пользователя
+// ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ Г¤Г ГІГ» ГІГ®ГўГ Г°Г  Г®ГІ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
 std::string ProductInfoHandler::getProductDate() {
     std::string date;
-    std::cout << "Введите дату (например, 2023.12.31): ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г ГІГі (Г­Г ГЇГ°ГЁГ¬ГҐГ°, 2023.12.31): ";
     std::getline(std::cin, date);
     if (!DateValidator::isValidDate(date)) {
-        throw std::invalid_argument("Некорректная или несуществующая дата");
+        throw std::invalid_argument("ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г Гї ГЁГ«ГЁ Г­ГҐГ±ГіГ№ГҐГ±ГІГўГіГѕГ№Г Гї Г¤Г ГІГ ");
     }
     return date;
 }
