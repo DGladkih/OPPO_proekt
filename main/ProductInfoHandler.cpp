@@ -1,4 +1,3 @@
-//ProductInfoHandler.cpp
 #include "ProductInfoHandler.h"
 #include <iostream>
 #include "DateValidator.h" // Ïîäêëþ÷àåì äëÿ èñïîëüçîâàíèÿ DateValidator
