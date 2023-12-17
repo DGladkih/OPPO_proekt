@@ -1,3 +1,4 @@
+//ProductInfoHandler.h
 #ifndef PRODUCTINFOHANDLER_H
 #define PRODUCTINFOHANDLER_H
 

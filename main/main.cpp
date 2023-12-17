@@ -1,5 +1,8 @@
-﻿#include "Product.h"            // Включаем заголовок Product
-#include "ProductInfoHandler.h" // Включаем заголовок ProductInfoHandler
+﻿//main.cpp
+
+#include "Product.h"
+#include "ProductInfoHandler.h"
+#include "DateValidator.h"
 #include <iostream>
 #include <locale>
 #include <stdexcept>
@@ -28,4 +31,3 @@ int main() {
 
     return 0;
 }
-

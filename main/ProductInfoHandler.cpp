@@ -1,8 +1,8 @@
+//ProductInfoHandler.cpp
 #include "ProductInfoHandler.h"
 #include <iostream>
 #include "DateValidator.h" // Подключаем для использования DateValidator
 
-// ... (оставить реализацию методов как в оригинале)
 std::string ProductInfoHandler::getProductName() {
     std::string name;
     std::cout << "Введите Название товара: ";
