@@ -1,38 +1,38 @@
-#include "ProductInfoHandler.h"
+﻿#include "ProductInfoHandler.h"
 #include <iostream>
-#include "DateValidator.h" // Ïîäêëþ÷àåì äëÿ èñïîëüçîâàíèÿ DateValidator
+#include "DateValidator.h" 
 
 std::string ProductInfoHandler::getProductName() {
     std::string name;
-    std::cout << "Ââåäèòå Íàçâàíèå òîâàðà: ";
+    std::cout << "Введите Название товара: ";
     std::getline(std::cin, name);
     return name;
 }
 
-// Ïîëó÷åíèå êîëè÷åñòâà òîâàðà îò ïîëüçîâàòåëÿ
+// Получение количества товара от пользователя
 int ProductInfoHandler::getProductQuantity() {
     std::string input;
-    std::cout << "Ââåäèòå êîëè÷åñòâî òîâàðà: ";
+    std::cout << "Введите количество товара:  ";
     std::getline(std::cin, input);
     try {
         int quantity = std::stoi(input);
         if (quantity < 0) {
-            throw std::invalid_argument("Îòðèöàòåëüíîå êîëè÷åñòâî òîâàðà");
+            throw std::invalid_argument("Отрицательное количество товара");
         }
         return quantity;
     }
     catch (const std::invalid_argument& e) {
-        throw std::invalid_argument("Íåêîððåêòíîå êîëè÷åñòâî òîâàðà");
+        throw std::invalid_argument("Некорректное количество товара");
     }
 }
 
-// Ïîëó÷åíèå äàòû òîâàðà îò ïîëüçîâàòåëÿ
+// Получение даты товара от пользователя
 std::string ProductInfoHandler::getProductDate() {
     std::string date;
-    std::cout << "Ââåäèòå äàòó (íàïðèìåð, 2023.12.31): ";
+    std::cout << "Введите дату (например, 2023.12.31):: ";
     std::getline(std::cin, date);
     if (!DateValidator::isValidDate(date)) {
-        throw std::invalid_argument("Íåêîððåêòíàÿ èëè íåñóùåñòâóþùàÿ äàòà");
+        throw std::invalid_argument("Некорректная или несуществующая дата");
     }
     return date;
 }
